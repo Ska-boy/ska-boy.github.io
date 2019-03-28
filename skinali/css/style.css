@@ -461,6 +461,12 @@ a {
   width: 100%;
 }
 
+@media (min-width: 1200px) {
+  .templated{
+    width: 70vw;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 }
