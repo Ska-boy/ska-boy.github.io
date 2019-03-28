@@ -461,7 +461,7 @@ a {
   width: 100%;
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .templated{
     width: 70vw;
   }
