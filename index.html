@@ -16,25 +16,35 @@
             font-size: 50px;
             font-weight: bold;
         }
-        ul {
-            padding-right: 40px;
+        ul {padding: 0;
             margin: 0 auto;
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            max-width: 690px;
+            max-width: 700px;
         }
         ul li {
             display: block;
+            padding: 0;
             margin: 10px auto;
+            flex-basis: 300px;
+            max-width: 300px;
+            
+            border: 1px solid rgb(58, 58, 58);
         }
         a {
-            border: 1px solid rgb(58, 58, 58);
             display: block;
             color: #ff6529;
             text-decoration: none;
-            padding: 20px;
-            max-width: 300px;
+            padding: 15px 0;
+            width: 100%;
+        }
+        @media (max-width: 500px) {
+            ul {
+                padding-right: 0;
+            }
+            a {
+            }
         }
     </style>
 </head>
