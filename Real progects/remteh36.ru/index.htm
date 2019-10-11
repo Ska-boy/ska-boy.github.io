@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset=UTF-8"utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Ремонт стиральных машин и холодильников</title>
+	<link rel="stylesheet" href="static/css/app.css" a href="http://remteh36.ru/static/css/app.css">
+	<link rel="icon" href="/favicon.ico">
+</head>
+<body>
+
+	<div id="app">
+
+		<!-- Менюшка -->
+		<div id="menu-spacer"></div>
+<div id="menu-wrapper">
+	<div class="wrapper">
+
+		<div class="contact-group">
+			<div class="contact fridge">
+				<b>
+					+7 (910) 344-34-31
+				</b>
+				<em>
+					Андрей
+				</em>
+			</div>
+			<div class="contact washer">
+				<b>
+					+7 (905) 651-71-53
+				</b>
+				<em>
+					Сергей
+				</em>
+			</div>
+		</div>
+
+		<div class="menu" :class="{'active':menuExpanded}">
+			<a href="#splash" v-smooth-scroll="{duration:500,offset:-200}" @click="menuExpanded=false">Вызвать мастера</a>
+			<a href="#checks" v-smooth-scroll="{duration:500,offset:-200}" @click="menuExpanded=false">О нас</a>
+			<a href="#crash-types" v-smooth-scroll="{duration:500,offset:-50}" @click="menuExpanded=false">Основные неисправности</a>
+			<a href="#pros" v-smooth-scroll="{duration:500,offset:-200}" @click="menuExpanded=false">Наши преимущества</a>
+			<a href="#contacts" v-smooth-scroll="{duration:500,offset:-200}" @click="menuExpanded=false">Контакты</a>
+		</div>
+
+		<div class="sandwich" @click="menuExpanded=!menuExpanded">&#8801;</div>
+	</div>
+</div>
+
+
+		<!-- Карусель -->
+		<div id="carousel-wrapper">
+	<div id="carousel">
+		<carousel :per-page="4" :per-page-custom="[[560, 8]]" :pagination-enabled="false" :autoplay="true" :autoplay-timeout="4000" :loop="true">
+			<slide v-for="(n, index) in 35">
+				<div class="carousel-item" :class="['icon-'+n]"></div>
+			</slide>
+		</carousel>
+	</div>
+</div>
+
+		<!-- Сплеш -->
+		<div id="splash">
+	<div class="wrapper">
+		<div class="tech">
+			<div class="image"></div>
+		</div>
+		<div class="ticket">
+			<div class="title">
+				Ремонт<br>стиральных машин<br>и холодильников
+			</div>
+			<div class="subtitle">
+				на дому в Воронеже<br>и Воронежской области
+			</div>
+			<div class="form">
+				<span>Свяжитесь с нашими мастерами по телефонам:</span>
+				<div class="contact">
+					<b>+7 (910) 344-34-31</b><em>(Андрей)</em>
+				</div><br>
+				<div class="contact washer">
+					<b>+7 (905) 651-71-53</b><em>(Сергей)</em>
+				</div>
+				<span>Или заполните заявку на вызов мастера,<br>и мы вам перезвоним:</span>
+
+				<div class="input">
+					<em>Ваше имя:</em>
+					<input type="text" v-model="ticketName"/>
+				</div>
+				<div class="input">
+					<em>Телефон:</em>
+					<masked-input type="tel" mask="\+\7 (111) 111-11-11" v-model="ticketPhone"></masked-input>
+				</div>
+				<div class="select" :class="{'expand' : ticketTypeExpanded}" v-click-outside="closeSelect">
+					<div class="label" @click="ticketTypeExpanded=!ticketTypeExpanded">{{ allowedTypes[ticketType] }}<i></i></div>
+					<div class="options">
+						<div class="item" v-for="(text, key) in allowedTypes" @click="ticketType=key;ticketTypeExpanded=false;">{{ text }}</div>
+					</div>
+				</div>
+				<div class="button send-button" :class="{'loading':sending}" @click="send">Вызов мастера</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<!-- Чекбоксы -->
+		<div id="checks">
+	<div class="title">Мы ремонтируем бытовую технику прямо на дому!</div>
+	<div class="text">Мы ценим ваше время, поэтому всегда стремимся выполнить ремонт крупной бытовой техники на дому и в течение первого визита. Исключения бывают только в случаях сложного ремонта, когда требуется пайка модуля управления стиральной машины или прохудившихся трубок холодильника, или если ваша техника редкой марки или модели, и у мастера нет с собой необходимых запчастей.</div>
+	<div class="title">Работаем по городам и районам Воронежской области:</div>
+	<div class="check-cont">
+		<div class="column">
+						<div class="item">Воронеж</div>
+						<div class="item">Нововоронеж</div>
+						<div class="item">Каширский район</div>
+						<div class="item">Хохол и Хохольский район</div>
+		</div>
+		<div class="column">
+						<div class="item">Лиски и Лискинский район</div>
+						<div class="item">Новая Усмань и Новоусманский район</div>
+						<div class="item">Семилуки и Семилукский район</div>
+						<div class="item">Рамонь и Рамонский район</div>
+		</div>
+	</div>
+</div>
+
+		<!-- Основные неисправности -->
+		<div id="crash-types">
+	<div class="column">
+		<div class="img"></div>
+		<div class="title">Основные неисправности<br>стиральных машин</div>
+		<div class="text">
+						<span class="line">1. Вода не греется</span>
+						<span class="line">2. Не поступает вода</span>
+						<span class="line">3. Стиральная машина не задерживает воду</span>
+						<span class="line">4. Не сливает воду</span>
+						<span class="line">5. Отжим белья слабый</span>
+						<span class="line">6. Под днищем агрегата появилась вода</span>
+						<span class="line">7. Не включается</span>
+						<span class="line">8. Машина «застучала»</span>
+						<span class="line">9. Барабан перестал вращаться</span>
+					</div>
+		<div class="footer">
+			<span class="accent">У вас другая проблема?</span>
+			<span>Вы можете связаться с нашим мастером<br>для консультации по телефону:</span>
+			<div class="contact washer">
+				<b>+7 (905) 651-71-53</b><em>(Сергей)</em>
+			</div>
+			<span class="off">Или заполните заявку на вызов мастера,<br>и мы вам перезвоним:</span>
+			<a href="#splash" class="button" v-smooth-scroll="{duration:500,offset:-200}">Вызов мастера</a>
+		</div>
+	</div>
+	<div class="column">
+		<div class="img fridge"></div>
+		<div class="title">Основные неисправности<br>холодильников</div>
+		<div class="text">
+							<span class="line">1. Не морозит, не холодит</span>
+							<span class="line">2. Не включается, не выключается</span>
+							<span class="line">3. Сильно морозит, перемораживает</span>
+							<span class="line">4. Повышенный шум, гремит, гудит</span>
+							<span class="line">5. Вода внутри или снаружи</span>
+					</div>
+		<div class="footer">
+			<span class="accent">Не нашли свою проблему?</span>
+			<span>Вы можете связаться с нашим мастером<br>для консультации по телефону:</span>
+			<div class="contact">
+				<b>+7 (910) 344-34-31</b><em>(Андрей)</em>
+			</div>
+			<span class="off">Или заполните заявку на вызов мастера,<br>и мы вам перезвоним:</span>
+			<a href="#splash" class="button" v-smooth-scroll="{duration:500,offset:-200}">Вызов мастера</a>
+		</div>
+	</div>
+</div>
+		<!-- Почему мы -->
+		<div id="pros">
+	<div class="title">
+		Наши преимущества
+	</div>
+	<div class="subtitle">
+		почему стоит обратиться к нам
+	</div>
+	<div class="icons">
+		<div class="icon">
+			<div class="img"></div>
+			<span>Письменная гарантия</span>
+		</div>
+		<div class="icon">
+			<div class="img icon-2"></div>
+			<span>Общение напрямую<br>с мастером</span>
+		</div>
+		<div class="icon">
+			<div class="img icon-3"></div>
+			<span>Принимаем оплату<br>на карту</span>
+		</div>
+		<div class="icon">
+			<div class="img icon-4"></div>
+			<span>Работаем по Воронежу<br>и области</span>
+		</div>
+	</div>
+	<div class="largetext">
+		<div class="large-label">Почему ремонт важно начать при первых признаках поломки?</div>
+		<div class="large-content">Мы выполняем ремонт бытовой техники на дому с 2003 года. Мы часто сталкиваемся с перегоревшими микросхемами, протечками, «убитыми» моторами, сгоревшими компрессорами и двигателями. В некоторых случаях возникновение неисправностей можно было бы избежать. Достаточно было бы обратиться за помощью специалистов при первичном подключении бытовых устройств. При появлении первых признаках поломки своевременное вмешательство специалистов позволяет значительно сократить финансовые потери при будущем ремонте.<br />
+<br />
+Мы рекомендуем при любом подозрении на неисправность, будь то необычный шум или гул при работе устройства, протечки и подтёки, нарушения запрограммированных режимов работы, -  тут же звонить профессионалам.<br />
+<br />
+Наш опыт и лояльные цены позволят вам не только отремонтировать уже сломанную вещь, но и защитить себя от возможных потерь в будущем.</div>
+		<div class="large-man"></div>
+	</div>
+</div>
+		<div id="contacts">
+	<div class="title">Остались вопросы?</div>
+	<div class="subtitle">Заполните заявку на вызов мастера и мы вам перезвоним:</div>
+	<div class="blue">
+		<div class="cont">
+			<div class="column">
+				<div class="input">
+					<em>Ваше имя:</em>
+					<input type="text" v-model="ticketName"/>
+				</div>
+			</div>
+			<div class="column">
+				<div class="input">
+					<em>Телефон:</em>
+					<masked-input type="tel" mask="\+\7 (111) 111-11-11" v-model="ticketPhone"></masked-input>
+				</div>
+			</div>
+			<div class="column">
+				<div class="button send-button" :class="{'loading':sending}" @click="send">Вызов мастера</div>
+			</div>
+		</div>
+		<div class="sub">
+			Отправляя заявку, вы даете свое согласие на обработку персональных данных в соответствии с политикой конфиденциальности сайта
+		</div>
+	</div>
+	<div class="subphones">
+		Или вы можете сами связаться с нашими мастерами для консультации по телефонам:<br>
+		<b>+7 (910) 344-34-31</b> (Андрей, холодильники), <b>+7 (905) 651-71-53</b> (Сергей, стиральные машины)
+	</div>
+</div>
+		<!-- Футер -->
+		<div id="footer">
+	<div class="wrapper">
+		<div class="col-1">
+			<div class="title">
+				РЕМОНТ ХОЛОДИЛЬНИКОВ<br>
+				И СТИРАЛЬНЫХ МАШИН<br>				
+			</div>
+			<div class="subtitle">
+				в Воронеже и области
+			</div>
+			<a href="http://remteh36.ru/files/politika.pdf" a href="http://remteh36.ru/files/politika.pdf">Политика конфиденциальности</a>
+			<a href="http://remteh36.ru/files/soglashenie.pdf" a href="http://remteh36.ru/files/soglashenie.pdf">Пользовательское соглашение</a>
+		</div>
+		<div class="col-2">
+			<a href="#splash" v-smooth-scroll="{duration:500,offset:-200}">Вызвать мастера</a>
+			<a href="#checks" v-smooth-scroll="{duration:500,offset:-200}">О нас</a>
+			<a href="#crash-types" v-smooth-scroll="{duration:500,offset:-50}">Основные неисправности</a>
+			<a href="#pros" v-smooth-scroll="{duration:500,offset:-200}">Наши преимущества</a>
+		</div>
+		<div class="col-3">
+			<div class="contact">
+				<b>+7 (910) 344 34 31</b><em>(Андрей)</em>
+			</div><br>
+			<div class="contact washer">
+				<b>+7 (905) 651 71 53</b><em>(Сергей)</em>
+			</div>
+			<div class="schedule">
+				<a href="https://vk.com/rembytteh36" a href="https://vk.com/rembytteh36" class="soc" target="_blank"></a>
+				<a href="#" class="soc ok" target="_blank"></a>
+				<div class="text">
+					Режим работы:<br>
+					<b>пн-пт 9:00-18:00</b>
+				</div>
+			</div>	
+			<div class="promo">&copy; 2019. <a href="http://vhodv.top/" a href="http://vhodv.top/">Проектная студия «Вход в ТОП»</a></div>			
+		</div>		
+	</div>
+	
+</div>
+
+	</div>
+	<script src="static/js/app.js" a href="http://remteh36.ru/static/js/app.js"></script>
+</body>
+</html>
