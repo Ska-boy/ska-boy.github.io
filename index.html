@@ -11,8 +11,10 @@
             background-color: #2d2d2d;
             text-align: center;
             color: #fff;
+            
         }        
         h2 {
+            padding-top: 40px;
             font-size: 50px;
             font-weight: bold;
         }
@@ -21,7 +23,8 @@
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            max-width: 700px;
+            flex-direction: row-reverse;
+            max-width: 680px;
         }
         ul li {
             display: block;
@@ -29,16 +32,25 @@
             margin: 10px auto;
             flex-basis: 300px;
             max-width: 300px;
-            border: 1px solid rgb(175, 175, 175);
+            background-color: #10cfbd;;
+            border: 1px solid #10cfbd;
+            border-radius: 5px;
+            
         }
         a {
             letter-spacing: 1.3px;
             display: block;
             font-weight: bold;
-            color: #10cfbd;
+            color: rgb(207, 207, 207);
             text-decoration: none;
             padding: 15px 0;
             width: 100%;
+            color: #2d2d2d;
+            transition: 0.2s;
+            font-size: 17px;
+        } 
+        a:hover {
+            background-color: #fff;
         }
     </style>
 </head>
