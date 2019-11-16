@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,36 +12,42 @@
             background-color: #2d2d2d;
             text-align: center;
             color: #fff;
-            
-        }        
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         h2 {
             padding-top: 40px;
             font-size: 50px;
             font-weight: bold;
         }
-        ul {padding: 0;
+
+        ul {
+            padding: 0;
             margin: 0 auto;
             list-style: none;
             display: flex;
             flex-wrap: wrap;
             flex-direction: row-reverse;
-            max-width: 680px;
+            max-width: 506px;
         }
+
         ul li {
             display: block;
             padding: 0;
             margin: 10px auto;
-            flex-basis: 300px;
-            max-width: 300px;
-            background-color: #10cfbd;;
-            border: 1px solid #10cfbd;
+            flex-basis: 220px;
+            max-width: 220px;
+            background-color: #10cfbd;
             border-radius: 5px;
-            
+            transition: 0.2s;
         }
+
         a {
             letter-spacing: 1.3px;
             display: block;
-            font-weight: bold;
+            font-weight: bolder;
             color: rgb(207, 207, 207);
             text-decoration: none;
             padding: 15px 0;
@@ -48,12 +55,30 @@
             color: #2d2d2d;
             transition: 0.2s;
             font-size: 17px;
-        } 
-        a:hover {
+        }
+        .sec {
             background-color: #fff;
+            height: 500px;
+            color: #2d2d2d;
+        }
+        a:hover {
+            
+        }
+
+        li:hover {
+            background-color: #fff;
+        }
+        .sec a:hover {
+            color: white;
+        }
+
+        .sec li:hover {
+            background-color: #2d2d2d;
+            
         }
     </style>
 </head>
+
 <body>
     <div>
         <h2>Final projects</h2>
@@ -63,16 +88,19 @@
             <li><a href="Real/remteh36.ru/index.htm" target="_blank">REMTEH</a></li>
             <li><a href="Real/vhodnew/index.html" target="_blank">VHOD V TOP</a></li>
             <li><a href="Final/BuilderHomenot-responsive/app/index.html">BUILDER HOME</a></li>
-            <li><a target="_blank" href="Final/fusion BEST OF THE BEST/index.html">FUSION</a></li>
-            <li><a href="Final/landing_page not-responsive/index.html" target="_blank">LENDING</a></li>
+            <li><a href="Final/landing_page not-responsive/index.html" target="_blank">LANDING</a></li>
             <li><a href="Final/octotrade not-responsive/index.html" target="_blank">OCTOTRADE</a></li>
             <li><a href="Final/StartUp not-responsive/index.html" target="_blank">STARTUP</a></li>
         </ul>
-        <h2>Studing progects</h2>
+        
+    </div>
+    <div class="sec">
+            <h2>Studing progects</h2>
         <ul>
             <li><a href="Учебные/paralax freedom/index.html" target="_blank">Paralax</a></li>
             <li><a href="Учебные/snake/index.html" target="_blank">Snake</a></li>
         </ul>
     </div>
 </body>
+
 </html>
