@@ -9,10 +9,8 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #2d2d2d;
+            color: #2d2d2d;
             text-align: center;
-            color: #fff;
-            overflow: hidden;
             margin: 0;
             padding: 0;
         }
@@ -30,73 +28,146 @@
             display: flex;
             flex-wrap: wrap;
             flex-direction: row-reverse;
-            max-width: 506px;
+            justify-content: space-between;
+            max-width: 1140px;
+            padding-bottom: 80px;
         }
 
         ul li {
             display: block;
             padding: 0;
             margin: 10px auto;
-            flex-basis: 220px;
-            max-width: 220px;
-            background-color: #10cfbd;
-            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 30%;
             transition: 0.2s;
+            box-shadow: 0px 0px 140px 15px rgba(0,0,0,0.06);
+            border-radius: 7px;
         }
 
         a {
             letter-spacing: 1.3px;
             display: block;
-            font-weight: bolder;
+            font-weight: bold;
             color: rgb(207, 207, 207);
             text-decoration: none;
-            padding: 15px 0;
             width: 100%;
             color: #2d2d2d;
             transition: 0.2s;
-            font-size: 17px;
+            line-height: 0;
+        }
+        a p {
+            font-size: 16px;
+            line-height: 25px;
+            font-weight: bold;
+            color: #2d2d2d;
+        }
+        img {
+            width: 100%;
+            height: 217px;
+            object-fit: fill;
+            border-radius: 7px;
         }
         .sec {
             background-color: #fff;
-            height: 500px;
-            color: #2d2d2d;
+            background-color: #2d2d2d;
+            height: 200px;
+            
         }
 
-        li:hover {
+        /* li:hover {
             background-color: #fff;
         }
         .sec a:hover {
             color: white;
-        }
+        } */
 
-        .sec li:hover {
+        /* .sec li:hover {
             background-color: #2d2d2d;
             
-        }
+        } */
     </style>
 </head>
 
 <body>
     <div>
-        <h2>Final projects</h2>
+        <h2>My projects</h2>
         <ul>
-            <li><a href="Real/dsl-stroy.ru/html/index.html" target="_blank">DISEL STROY</a></li>
-            <li><a href="Real/nashdom-rf.ru/index.html" target="_blank">NASH DOM RF</a></li>
-            <li><a href="Real/remteh36.ru/index.htm" target="_blank">REMTEH</a></li>
-            <li><a href="Real/vhodnew/index.html" target="_blank">VHOD V TOP</a></li>
-            <li><a href="Final/BuilderHomenot-responsive/app/index.html">BUILDER HOME</a></li>
-            <li><a href="Final/landing_page not-responsive/index.html" target="_blank">LANDING</a></li>
-            <li><a href="Final/octotrade not-responsive/index.html" target="_blank">OCTOTRADE</a></li>
-            <li><a href="Final/StartUp not-responsive/index.html" target="_blank">STARTUP</a></li>
+            <li>
+                <a href="Real/dsl-stroy.ru/html/index.html" target="_blank">
+                    <img src="img/diesel-str.png" alt="">
+                    <p>DISEL STROY</p>
+                </a>
+            </li>
+            <li>
+                <a href="Real/nashdom-rf.ru/index.html" target="_blank">
+                    <img src="img/nash.png" alt="">
+                    <p>NASH DOM RF</p>
+                </a>
+            </li>
+            <li>
+                <a href="Real/remteh36.ru/index.htm" target="_blank">
+                    <img src="img/rem.png" alt="">
+                    <p>REMTECH</p>
+                </a>
+            </li>
+            <li>
+                <a href="Real/vhodnew/index.html" target="_blank">
+                    <img src="img/vhod.png" alt="">
+                    <p>ВХОД В ТОП</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://test.orangecreative.ru/a/floors" target="_blank">
+                    <img src="img/ifloor.png" alt="">
+                    <p>iFLOOR</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://test.orangecreative.ru/a/urfaces" target="_blank">
+                    <img src="img/urfaces.png" alt="">
+                    <p>ЭКСПЕРТЫ БАНКРОТСТВА</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://test.orangecreative.ru/a/smart" target="_blank">
+                    <img src="img/smart.png" alt="">
+                    <p>SMART</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://test.orangecreative.ru/a/m8" target="_blank">
+                    <img src="img/m8.png" alt="">
+                    <p>M-8</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://test.orangecreative.ru/a/ppy" target="_blank">
+                    <img src="img/ppy.png" alt="">
+                    <p>PPY</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://test.orangecreative.ru/a/replyer" target="_blank">
+                    <img src="img/replyer.png" alt="">
+                    <p>REPLYER</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://test.orangecreative.ru/a/deceunink" target="_blank">
+                    <img src="img/Screenshot_3.png" alt="">
+                    <p>DECEUNINK</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://test.orangecreative.ru/a/diana" target="_blank">
+                    <img src="img/diana.png" alt="">
+                    <p>DIANA</p>
+                </a>
+            </li>
         </ul>
-        
     </div>
     <div class="sec">
-            <h2>Studing progects</h2>
-        <ul>
-            <li><a href="Учебные/paralax freedom/index.html" target="_blank">Paralax</a></li>
-            <li><a href="Учебные/snake/index.html" target="_blank">Snake</a></li>
-        </ul>
+         
     </div>
 </body>
 
